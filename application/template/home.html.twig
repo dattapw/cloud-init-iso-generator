@@ -1,0 +1,60 @@
+{% extends 'template.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row" style="margin-bottom: 30px;margin-top: 30px;">
+            <div class="col-8 offset-2">
+                <h3 class="text-center">Generate Cloud-Init ISO Image for your Cloud/VMWare/ESXI Guest OS</h3>
+                <p>For security purposes, no data is kept on the server. The ISO file is deleted immediately after you download it.</p>
+                <p>Background: Cloud images of popular Linux distributions like Ubuntu ship with a Cloud-Init utility that allows you to configure certain parameters using an attachable ISO image while creating your VM or Cloud instance. This little utility helps you generate the same ISO file with your settings.</p>
+            </div>
+        </div>
+        <form action="/process" method="POST">
+            <div class="row form-group">
+                <div class="col-3 offset-2"><label>Instance ID</label></div>
+                <div class="col-5"><input type="text" class="form-control" name="instance_id" value="cloud-host-1" required/></div>
+            </div>
+            <div class="row form-group">
+                <div class="col-3 offset-2"><label>Hostname</label></div>
+                <div class="col-5"><input type="text" class="form-control" name="os_hostname" value="ubuntu-vm-1" required/></div>
+            </div>
+            <div class="row form-group">
+                <div class="col-3 offset-2"><label>Password</label></div>
+                <div class="col-5"><input type="text" class="form-control" name="os_password" required/></div>
+            </div>
+            <div class="row form-group">
+                <div class="col-3 offset-2"><label>Enable SSH login via password?</label></div>
+                <div class="col-5">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ssh_login" value="true" checked>
+                        <label class="form-check-label">
+                            Enable
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="ssh_login" value="false">
+                        <label class="form-check-label">
+                            Disable
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-3 offset-2"><label>SSH Public Key</label></div>
+                <div class="col-5"><input type="text" class="form-control" name="ssh_public_key[]" /></div>
+            </div>
+            <div class="row form-group">
+                <div class="col-3 offset-2"><label>SSH Public Key</label></div>
+                <div class="col-5"><input type="text" class="form-control" name="ssh_public_key[]" /></div>
+            </div>
+            <div class="row form-group">
+                <div class="col-3 offset-2"><label>SSH Public Key</label></div>
+                <div class="col-5"><input type="text" class="form-control" name="ssh_public_key[]" /></div>
+            </div>
+            <div class="row form-group">
+                <div class="col-3 offset-2"></div>
+                <div class="col-5"><button class="btn btn-primary">Generate ISO Image</button></div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

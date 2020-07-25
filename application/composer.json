@@ -1,0 +1,20 @@
+{
+    "name": "saurabhdatta/cloud-init-iso",
+    "authors": [
+        {
+            "name": "Saurabh Datta",
+            "email": "contact@saurabhdatta.com"
+        }
+    ],
+    "require": {
+        "symfony/yaml": "^5.1",
+        "symfony/process": "^5.1",
+        "bramus/router": "~1.4",
+        "twig/twig": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DattaConsulting\\CloudInitIso\\Controller\\" : "controller/"
+        }
+    }
+}
