@@ -1,6 +1,6 @@
 Generate Cloud-Init ISO Image for your Cloud/VMWare/ESXI Guest OS
 
-A hosted version is available at http://cloud-init-iso.saurabhdatta.com/
+A hosted version is available at https://cloud-init-iso.saurabhdatta.com/
 
 For security purposes, no data is kept on the server. The ISO file is deleted immediately after you download it.
 
